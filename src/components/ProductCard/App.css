@@ -1,0 +1,40 @@
+.product {
+    border: solid white 1px;
+    border-radius: 20px;
+    padding: 16px;
+    width: 300px;
+    height: 468px;
+    box-shadow: 0px 0px 6px;
+}
+
+.product:hover {
+    border: solid rgb(150, 255, 251) 1px;
+}
+
+.product-category {
+    color: #4169E1;
+    font-size: 14px;
+
+}
+
+.product img {
+    width: 288px;
+    height: 280px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price button {
+    color: white;
+    background-color: #4169E1;
+    border: unset;
+    border-radius: 5px;
+    width: 50%;
+    height: 70px;
+}
