@@ -1,17 +1,17 @@
 import "./App.css";
 
 export function ProductCard(props) {
-  const { image, category, name, price } = props.data;
+  const { id, image, category, title, price } = props.data;
 
   return (
-    <div class="product">
-      <div class="prodct-upper">
+    <div className="product" key={id}>
+      <div className="prodct-upper">
         <img src={image} alt="" />
-        <p class="product-category">{category}</p>
-        <h3 class="product-name">{name}</h3>
+        <p className="product-category">{category}</p>
+        <h3 className="product-name">{title}</h3>
       </div>
-      <div class="price">
-        <h2 class="price-label">${price}</h2> <button>Add to cart</button>
+      <div className="price">
+        <h2 className="price-label">${price}</h2> <button>Add to cart</button>
       </div>
     </div>
   );

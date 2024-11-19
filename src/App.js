@@ -1,28 +1,23 @@
+import { useState, useEffect } from "react";
 import { ProductCard } from "./components/ProductCard";
 
-const products = [
-  {
-    id: 0,
-    name: "Santa",
-    price: 100,
-    category: "Santa Claus",
-    image: "https://www.adbranch.com/wp-content/uploads/coca-cola_for_santa_1950.jpg"
-  },
-  {
-    id: 1,
-    name: "Dead MoroZ",
-    price: 200,
-    category: "Ded Moros",
-    image: "https://chips-journal.ru/files/review/2021-11-15/WlpjAaYBR9iasu4g-SgqUfzHUO_Jjh6H_1240_832.jpg"
-  }
-]
-
 function App() {
-  return <div class="list-products">
-    {
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() =>{
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setProducts(json))
+      .finally(() => setLoading(false));
+  }, []);
+
+  return (<div className="list-products">
+    {loading && <img src="https://media.tenor.com/xdnqVxS6wu4AAAAM/bored-fidget-spinner.gif"></img>}
+    { 
       products.map((e) => <ProductCard data={e}/>)
     }
-  </div>
+  </div>)
 }
 
 export default App;
