@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+* {
+  font-family: "Inter";
+}
+
 .list-products {
   display: flex;
   flex-wrap: wrap;
